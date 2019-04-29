@@ -11,18 +11,18 @@ class App extends React.Component {
     };
   }
 
+  //dummydata is an array with lots of objects
   
   render() {
-    const objectOfDummyData = dummyData.map(object=>{
-      return object;
-    })
-    console.log(objectOfDummyData);
-
+    
     return (
       <div className="App">
         <h1>GhettoGram</h1>
         <div className='container'>
-          <PostContainer arrayofObjects={objectOfDummyData} />
+          {/* objectDummy in map is each individual object from Dummy Array one at a time */}
+          {this.state.map(objectDummy=>{
+            <PostContainer objectDummy={objectDummy} />
+          })}
         </div>
 
       </div>
