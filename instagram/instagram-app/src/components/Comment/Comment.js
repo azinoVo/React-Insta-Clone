@@ -1,22 +1,19 @@
-import React from 'react';
+// import React from 'react';
 
-// Function or Class Here
-{/* <Comment info={commentsduo} /> */}
-// This component takes the  
-        // username: "biancasaurus",
-        // text: "Looks delicious!"
-// from CommentSection as prop and displays them
-//                 <Comment info={commentsduo} />
+// // Function or Class Here
+// // This component takes the  
+//         // username: "biancasaurus",
+//         // text: "Looks delicious!"
+// // from CommentSection as prop and displays them
 
-
-const SearchBar = props => {
-    return (
-        <div>
-            <p>{props.info.username}</p>
-            <p>{props.info.text}</p>
-        </div>
-    );
-}
+// const Comment = props => {
+//     return (
+//         <div>
+//             <p>{props.info.username}</p>
+//             <p>{props.info.text}</p>
+//         </div>
+//     );
+// }
 
 
-export default Comment;
+// export default Comment;
