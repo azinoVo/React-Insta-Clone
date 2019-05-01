@@ -4,17 +4,17 @@ import Comment from '../Comment/Comment';
 // Function or Class Here
 // passing props from PostContainer
 class CommentSection extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state= {
+        this.state = {
             comments: [],
             likes: []
         }
 
     }
-// when comment is rendered in the DOM, we want to set the state equal to props we passed in
-// Use this to setState temporarily 
-// this allows child to have access to the parent props as state data
+    // when comment is rendered in the DOM, we want to set the state equal to props we passed in
+    // Use this to setState temporarily 
+    // this allows child to have access to the parent props as state data
 
     componentDidMount() {
         this.setState({
@@ -23,19 +23,19 @@ class CommentSection extends React.Component {
         })
     }
 
-// On form event, click or submit, we want to set stae equal to value of input field
-// concat combines two or more arrays
-// use querySelector to find element that we want to set the value equal to text
-// .value is whatever is within input
+    // On form event, click or submit, we want to set stae equal to value of input field
+    // concat combines two or more arrays
+    // use querySelector to find element that we want to set the value equal to text
+    // .value is whatever is within input
 
     onSubmit = event => {
         event.preventDefault();
         this.setState({
             comments: [
-                ...this.state.comments ].concat(
+                ...this.state.comments].concat(
                     {
-                    username:'',
-                    text:event.target.querySelector('.comment-form').value
+                        username: 'Insta-bot',
+                        text: event.target.querySelector('.comment-form').value
                     }
                 )
         })
@@ -48,24 +48,26 @@ class CommentSection extends React.Component {
         })
     }
 
-// && just means it needs both has to be true
-// Ask about && has to be true on both true
+    // && just means it needs both has to be true
+    // Ask about && has to be true on both true
 
-     render() {
-         const comments = this.state.comments;
+    render() {
+        const comments = this.state.comments;
         return (
-            
+
             <div>
                 <div>
-                         <i onClick={this.loveHandles} className="far fa-heart" />
-                         {/* <i onClick={this.addComment} className="far fa-comment" /> */}
+                    <i onClick={this.loveHandles} className="far fa-heart" />
+                    {/* <i onClick={this.addComment} className="far fa-comment" /> */}
                 </div>
-                        <p><strong>Likes</strong>: {this.state.likes}</p>
+                <p><strong>Likes</strong>: {this.state.likes}</p>
 
-               <div>
-                    {comments && comments.map((comment,i) => 
-                    <Comment key={i} comment={comment} /> )}
-               </div>
+                <h2>Comments</h2>
+
+                <div>
+                    {comments && comments.map((comment, i) =>
+                        <Comment key={i} comment={comment} />)}
+                </div>
 
                 <div className='comment-form'>
                     <form onSubmit={this.onSubmit}>
@@ -79,8 +81,8 @@ class CommentSection extends React.Component {
                 </div>
             </div>
         );
-    
-     }
- }
+
+    }
+}
 
 export default CommentSection;

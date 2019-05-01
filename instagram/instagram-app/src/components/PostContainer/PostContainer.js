@@ -8,59 +8,21 @@ class PostContainer extends React.Component {
     constructor(props){
         super(props);
         this.state= {
-            profile: this.props.objectDummy,
-            searchName: ''
+            
         }
 
     }
-
-    componentDidMount() {
-        this.setState({
-            profile: this.state.profile 
-        })
-        console.log(this.state.profile)
-
-    }
-
-    onChange = event => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-        console.log(event.target.value);
-    }
-
-    onSubmit = event => {
-        event.preventDefault();
-        //map through copy of array of objectDummy, filtering the one with a specific profile that user type
-        this.setState({
-            profile: this.state.profile.filter(e=>{
-                if(e.username === this.state.searchName) {
-                    return e;
-                }})
-        })
-    }
-
 
     render() {
 
         return (
             <>
-                <div className='searchbar'>
-                <form onSubmit={this.onSubmit}>
-                        <input
-                            type="text"
-                            name="searchName"
-                            onChange={this.onChange} />
-                        <button type="submit">Sort by Name</button>
-                    </form>
-                </div>
-            
                 {this.props.objectDummy.map((post,index)=> (
                     <div className='main-profile' key={index}>
     
                         <div className='header'>
                             <img src={post.thumbnailUrl} alt="thumbnail"/>
-                            <p><strong>{post.profile}</strong></p> 
+                            <p><strong>{post.username}</strong></p> 
                         </div>
     
                         <div className='picture'><img src={post.imageUrl} alt="profile" className='profile-image'/></div>
