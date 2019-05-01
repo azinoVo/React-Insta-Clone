@@ -23,7 +23,7 @@ class App extends React.Component {
 // Put the form within its own component or within post container when finished
     return (
       <div className="App">
-        <h1>GhettoGram</h1>
+        <h1>'Insta'Gram</h1>
         <div className='container'>
           {/* objectDummy in map is each individual object from Dummy Array one at a time */}
             <PostContainer objectDummy={objectDummy} />

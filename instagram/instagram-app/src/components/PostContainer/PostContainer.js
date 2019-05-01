@@ -8,7 +8,7 @@ import AddCommentForm from '../AddCommentForm/AddCommentForm';
 const PostContainer = props => {
     return (
         <>
-            {props.objectDummy.map((post)=> (
+            {props.objectDummy.map((post,index)=> (
                 <div className='main-profile' key={post.username}>
 
                     <div className='header'>
@@ -19,11 +19,13 @@ const PostContainer = props => {
                     <div className='picture'><img src={post.imageUrl} alt="profile" className='profile-image'/></div>
 
                     <div className='comment-section'>
-                        <p>Likes: {post.likes}, Time: {post.timestamp}</p>
+                        <p><strong>Likes</strong>: {post.likes}</p>
+                        <p><strong>Posted On</strong>: {post.timestamp}</p>
+                        <h2>Comments</h2>
                         {post.comments.map((comment,index)=>
                         <p key={index+1000}><strong>{comment.username}</strong>: {comment.text}</p>
                         )}
-                        <AddCommentForm comment={post.comments} />
+                        <AddCommentForm id={index} comments={post.comments} />
                     </div>
 
                 </div>
