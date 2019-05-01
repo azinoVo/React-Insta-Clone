@@ -15,10 +15,10 @@ class App extends React.Component {
   
   render() {
     //sets up an array of the individual objects within dummyData
-    let objectDummy = this.state.dummyData.map(object=>{
-      return object;
-    })
-    console.log(objectDummy);
+    // let objectDummy = this.state.dummyData.map(object=>{
+    //   return object;
+    // })
+    // console.log(objectDummy);
     
 // Put the form within its own component or within post container when finished
     return (
@@ -26,7 +26,7 @@ class App extends React.Component {
         <h1>'Insta'Gram</h1>
         <div className='container'>
           {/* objectDummy in map is each individual object from Dummy Array one at a time */}
-            <PostContainer objectDummy={objectDummy} />
+            <PostContainer objectDummy={this.state.dummyData} />
         </div>
 
       </div>
