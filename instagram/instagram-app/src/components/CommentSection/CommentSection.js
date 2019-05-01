@@ -69,13 +69,13 @@ class CommentSection extends React.Component {
 
                 <div className='comment-form'>
                     <form onSubmit={this.onSubmit}>
-                            <input
-                                type="text"
-                                name="comment"
-                                className="comment-form"
-                                onChange={this.onUpdate} />
-                                <button type="submit">Add Comment</button>
-                            </form>
+                        <input
+                            type="text"
+                            name="comment"
+                            className="comment-form"
+                            onChange={this.onUpdate} />
+                        <button type="submit">Add Comment</button>
+                    </form>
                 </div>
             </div>
         );
