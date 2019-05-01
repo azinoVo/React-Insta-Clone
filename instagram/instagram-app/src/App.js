@@ -7,11 +7,11 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-       dummyData: dummyData
+       dummyData: dummyData,
     };
   }
 
-  //dummydata is an array with lots of objects
+  // dummydata is an array with lots of objects
   
   render() {
     //sets up an array of the individual objects within dummyData
@@ -20,7 +20,7 @@ class App extends React.Component {
     })
     console.log(objectDummy);
     
-
+// Put the form within its own component or within post container when finished
     return (
       <div className="App">
         <h1>GhettoGram</h1>

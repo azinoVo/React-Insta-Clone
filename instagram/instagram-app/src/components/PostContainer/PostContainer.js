@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './PostContainer.css';
+import AddCommentForm from '../AddCommentForm/AddCommentForm';
 // import CommentSection from '../CommentSection/CommentSection';
 
 
 const PostContainer = props => {
     return (
         <>
-            {props.objectDummy.map((post,index)=> (
+            {props.objectDummy.map((post)=> (
                 <div className='main-profile' key={post.username}>
 
                     <div className='header'>
@@ -22,6 +23,7 @@ const PostContainer = props => {
                         {post.comments.map((comment,index)=>
                         <p key={index+1000}><strong>{comment.username}</strong>: {comment.text}</p>
                         )}
+                        <AddCommentForm comment={post.comments} />
                     </div>
 
                 </div>
