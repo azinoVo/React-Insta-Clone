@@ -1,5 +1,5 @@
 import React from 'react';
-import '../PostContainer/PostsPage.css';
+// import '../PostContainer/PostsPage.css';
 import dummyData from '../../dummy-data';
 import PostContainer from '../PostContainer/PostContainer';
 import SearchBar from '../SearchBar/SearchBar';
@@ -19,6 +19,10 @@ class PostsPage extends React.Component {
     })
     console.log(dummyData);
   }
+
+
+  // Using a filtered State to store the filtered results is more effective since you can keep original
+  // state for when user searches something outside the bounds
 
   onSubmit = event => {
     event.preventDefault();

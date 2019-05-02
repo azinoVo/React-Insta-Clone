@@ -1,11 +1,19 @@
 import React from 'react';
 import './SearchBar.css'
+import styled from 'styled-components';
+
 
 // Function or Class Here
+const SearchWrap = styled.div `
+      width:100%%;
+      height:auto;
+      text-align:center;
+      background-color:lightblue;
+  `
 
 const SearchBar = props => {
     return (
-        <div className='searchbar'>
+        <SearchWrap>
             <form onSubmit={props.onSub}>
                 <input
                     type="text"
@@ -13,7 +21,7 @@ const SearchBar = props => {
                     onChange={props.onChange} />
                 <button type="submit">Sort by Name</button>
             </form>
-        </div>
+        </SearchWrap>
     );
 }
 

@@ -13,7 +13,7 @@ const withAuthenticate = PostsPage => Login =>
         }
 
         componentDidMount(){
-            if(localStorage.getItem('username')) {
+            if(localStorage.getItem('username') && localStorage.getItem('password'))  {
                 this.setState({
                     loggedIn: true
                 })

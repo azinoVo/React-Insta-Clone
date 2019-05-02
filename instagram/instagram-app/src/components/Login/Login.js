@@ -8,21 +8,24 @@ class Login extends React.Component {
         this.state = {
             username: '',
             password: '',
-            loggedIn: false,
+            newUser: true
         }
     }
 
+    // Set a conditional that compares with information on state - use a newUser state
+    // loggedIn should be a newUser state if the information on state does not match
+    // Set the name of username within local storage within the condition
+
     login = () => {
         // event.preventDefault();
-        if(this.state.loggedIn === false) {
-            localStorage.setItem('username', this.state.username);
-            localStorage.setItem('password', this.state.password);
-            this.setState({ loggedIn: true })
-        } 
+        if(localStorage.getItem('{this.state.username}') === this.state.username 
+        && localStorage.getItem('{this.state.password}') === this.state.password ) {
+            this.setState ({
+                newUser: false
+            })
+            window.location.reload();
+                        } 
         else {
-            this.setState({loggedIn: false})
-            localStorage.removeItem('username');
-            localStorage.removeItem('password');
             localStorage.setItem('username', this.state.username);
             localStorage.setItem('password', this.state.password);
         }
@@ -41,7 +44,7 @@ class Login extends React.Component {
 
         return (
             <div className='form-container'>
-                <p>Welcome {localStorage.getItem('username')}</p>
+                <p>Welcome to 'Insta'Gram {localStorage.getItem('username')}</p>
                 <form onSubmit={this.login} >
 
 

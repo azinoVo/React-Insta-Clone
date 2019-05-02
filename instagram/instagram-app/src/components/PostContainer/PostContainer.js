@@ -13,11 +13,16 @@ class PostContainer extends React.Component {
 
     }
 
+    logOut = () => {
+        localStorage.clear();
+        window.location.reload();
+    }
+
     render() {
 
         return (
             <>
-                <h3>Welcome {localStorage.getItem('username')}</h3>
+                <h3>Welcome {localStorage.getItem('username')}</h3> <span><button onClick={this.logOut}>Log Out</button></span>
                 {this.props.objectDummy.map((post,index)=> (
                     <div className='main-profile' key={index}>
     
