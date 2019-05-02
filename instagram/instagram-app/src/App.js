@@ -1,57 +1,24 @@
 import React from 'react';
 import './App.css';
-import dummyData from './dummy-data';
-import PostContainer from './components/PostContainer/PostContainer';
-import SearchBar from './components/SearchBar/SearchBar';
+import PostsPage from './components/PostContainer/PostsPage';
+import withAuthenticate from './components/Authentication/withAuthenticate';
+
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPage);
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      dummyData: dummyData,
-      searchName: '',
+      
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      dummyData: dummyData
-    })
-    console.log(dummyData);
-  }
-
-  onSubmit = event => {
-    event.preventDefault();
-    // map through copy of array of objectDummy, filtering the one with a specific profile that user type
-    this.setState({
-      dummyData: this.state.dummyData.filter(object => {
-        if (object.username === this.state.searchName) {
-          return object;
-        }
-      })
-    })
-  }
-
-
-  onChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-    console.log(event.target.value);
-  }
-
-  // dummydata is an array of objects
-
   render() {
-
+    
     return (
-      <div className="App">
-        <h1>'Insta'Gram</h1>
-        <SearchBar onSub={this.onSubmit} onChange={this.onChange} />
-        <div className='container'>
-          {/* objectDummy in map is each individual object from Dummy Array one at a time */}
-          <PostContainer objectDummy={this.state.dummyData} />
-        </div>
+      <div>
+        {/* <PostsPage /> */}
+        <ComponentFromWithAuthenticate />
       </div>
     );
   }
