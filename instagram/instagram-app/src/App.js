@@ -5,7 +5,7 @@ import withAuthenticate from './components/Authentication/withAuthenticate';
 import Login from './components/Login/Login';
 
 
-const ComponentFromWithAuthenticate = withAuthenticate(PostsPage);
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login);
 
 class App extends React.Component {
   constructor() {
@@ -20,7 +20,7 @@ class App extends React.Component {
     return (
       <div>
         {/* <PostsPage /> */}
-        <Login />
+        {/* <Login /> */}
         <ComponentFromWithAuthenticate />
       </div>
     );

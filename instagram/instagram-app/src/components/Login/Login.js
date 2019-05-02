@@ -12,8 +12,8 @@ class Login extends React.Component {
         }
     }
 
-    login = event => {
-        event.preventDefault();
+    login = () => {
+        // event.preventDefault();
         if(this.state.loggedIn === false) {
             localStorage.setItem('username', this.state.username);
             localStorage.setItem('password', this.state.password);

@@ -17,6 +17,7 @@ class PostContainer extends React.Component {
 
         return (
             <>
+                <h3>Welcome {localStorage.getItem('username')}</h3>
                 {this.props.objectDummy.map((post,index)=> (
                     <div className='main-profile' key={index}>
     
