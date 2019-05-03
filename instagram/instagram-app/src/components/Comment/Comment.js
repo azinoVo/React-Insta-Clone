@@ -10,8 +10,7 @@ class Comment extends React.Component {
     render() {
         return (
             <div>
-                <p><strong>{this.props.comment.username}</strong></p>
-                <p>{this.props.comment.text}</p>
+                <p><strong>{this.props.comment.username}</strong> {this.props.comment.text}</p>
             </div>
         );
     }

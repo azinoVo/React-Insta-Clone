@@ -1,5 +1,7 @@
 import React from 'react';
 import Comment from '../Comment/Comment';
+import styled from 'styled-components';
+
 
 // Function or Class Here
 // passing props from PostContainer
@@ -53,6 +55,15 @@ class CommentSection extends React.Component {
 
     render() {
         const comments = this.state.comments;
+
+        const CommentsHeader = styled.h3`
+            text-decoration:underline;
+            margin:2% 0;
+        `
+        const Button = styled.button`
+            width:20%;
+            margin:1%;
+        `
         return (
 
             <div>
@@ -62,7 +73,7 @@ class CommentSection extends React.Component {
                 </div>
                 <p><strong>Likes</strong>: {this.state.likes}</p>
 
-                <h2>Comments</h2>
+                <CommentsHeader>Comments</CommentsHeader>
 
                 <div>
                     {comments && comments.map((comment, i) =>
@@ -75,8 +86,9 @@ class CommentSection extends React.Component {
                             type="text"
                             name="comment"
                             className="comment-form"
-                            onChange={this.onUpdate} />
-                        <button type="submit">Add Comment</button>
+                            onChange={this.onUpdate}
+                            style={{width: "75%"}} />
+                        <Button type="submit">Add Comment</Button>
                     </form>
                 </div>
             </div>

@@ -49,10 +49,10 @@ class PostsPage extends React.Component {
 
   render() {
 
-    const AppWrap = styled.div`
-      max-width:1000px;
-      height:auto;
-    `
+    // const AppWrap = styled.div`
+    //   max-width:1000px;
+    //   height:auto;
+    // `
 
     const HeadWrap = styled.h1`
       text-align:center;
@@ -78,7 +78,7 @@ class PostsPage extends React.Component {
     `
 
     return (
-      <AppWrap>
+      <div>
         <HeadWrap>'Insta'Gram</HeadWrap>
         <SearchBar onSub={this.onSubmit} onChange={this.onChange} />
         <LogOutWrap>
@@ -86,10 +86,9 @@ class PostsPage extends React.Component {
           <span><button onClick={this.logOut}>Log Out</button></span>
         </LogOutWrap>
         <ContainerWrap>
-          {/* objectDummy in map is each individual object from Dummy Array one at a time */}
           <PostContainer objectDummy={this.state.dummyData} />
         </ContainerWrap>
-      </AppWrap>
+      </div>
     );
   }
 }
