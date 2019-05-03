@@ -1,8 +1,9 @@
 import React from 'react';
-// import '../PostContainer/PostsPage.css';
 import dummyData from '../../dummy-data';
 import PostContainer from '../PostContainer/PostContainer';
 import SearchBar from '../SearchBar/SearchBar';
+import styled from 'styled-components';
+
 
 class PostsPage extends React.Component {
   constructor() {
@@ -48,15 +49,47 @@ class PostsPage extends React.Component {
 
   render() {
 
+    const AppWrap = styled.div`
+      max-width:1000px;
+      height:auto;
+    `
+
+    const HeadWrap = styled.h1`
+      text-align:center;
+    `
+
+    const LogOutWrap = styled.div`
+    display:flex;
+    align-content:center;
+    justify-content:space-between;
+    margin:3%;
+    border-bottom:1px solid black;    
+
+    `
+
+    const ContainerWrap = styled.div`
+        width:75%;
+        height:auto;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-content:center;
+        margin: 0 auto;
+    `
+
     return (
-      <div className="App">
-        <h1>'Insta'Gram</h1>
+      <AppWrap>
+        <HeadWrap>'Insta'Gram</HeadWrap>
         <SearchBar onSub={this.onSubmit} onChange={this.onChange} />
-        <div className='container'>
+        <LogOutWrap>
+          <p>Welcome {localStorage.getItem('username')}</p>
+          <span><button onClick={this.logOut}>Log Out</button></span>
+        </LogOutWrap>
+        <ContainerWrap>
           {/* objectDummy in map is each individual object from Dummy Array one at a time */}
           <PostContainer objectDummy={this.state.dummyData} />
-        </div>
-      </div>
+        </ContainerWrap>
+      </AppWrap>
     );
   }
 }
