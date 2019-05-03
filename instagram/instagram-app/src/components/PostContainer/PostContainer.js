@@ -15,11 +15,6 @@ class PostContainer extends React.Component {
 
     }
 
-    logOut = () => {
-        localStorage.clear();
-        window.location.reload();
-    }
-
     render() {
 
     //     const N = styled.h1`

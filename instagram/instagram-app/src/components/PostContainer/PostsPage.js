@@ -45,14 +45,14 @@ class PostsPage extends React.Component {
     console.log(event.target.value);
   }
 
-  // dummydata is an array of objects
+  logOut = () => {
+    localStorage.clear();
+    window.location.reload();
+}
+
 
   render() {
 
-    // const AppWrap = styled.div`
-    //   max-width:1000px;
-    //   height:auto;
-    // `
 
     const HeadWrap = styled.h1`
       text-align:center;

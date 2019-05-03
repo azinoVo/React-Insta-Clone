@@ -1,4 +1,7 @@
 import React from 'react';
+import styled from 'styled-components';
+import '../Login/Login.css'
+
 
 // Function
 
@@ -44,7 +47,7 @@ class Login extends React.Component {
 
         return (
             <div className='form-container'>
-                <p>Welcome to 'Insta'Gram {localStorage.getItem('username')}</p>
+                <p>Welcome to InstaGram-ish {localStorage.getItem('username')}</p>
                 <form onSubmit={this.login} >
 
 

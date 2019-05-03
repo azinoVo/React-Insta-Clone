@@ -1,0 +1,22 @@
+.form-container {
+    width:500px;
+    height:300px;
+    margin:100px auto;
+    display:flex;
+    flex-direction:column;
+}
+
+form {
+    display:flex;
+    flex-direction:column;
+    margin:2% 0;
+    padding:1%;
+}
+
+p {
+    text-align:center;
+    background-color:lightblue;
+    height:50px;
+    font-size:1.5rem;
+}
+
